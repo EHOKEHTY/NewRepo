@@ -9,8 +9,7 @@ namespace CoursesHomework2
     {
         static void Main(string[] args)
         {
-            string[] exceptWords = { "Рыба", "мясо", "зелень" };
-            Console.WriteLine(Exercise2("Рыбастик сказал рыба растёт под мясом с зеленью. Для этого нужно мясо, а зелень не всегда", exceptWords));
+            Console.WriteLine(Exercise3(8));
         }
 
         //*************************КОД ЗАДАНИЯ 1*******************************************
@@ -47,14 +46,18 @@ namespace CoursesHomework2
         }
 
         //*************************КОД ЗАДАНИЯ 3*******************************************
-        static void Exercise3(int simbolCount)  //случайный символ
+        static string Exercise3(int simbolCount)  //случайный символ
         {
             Random rand = new Random();
             rand.Next(0, 256);
+            char[] simbol = new char[simbolCount];
+            string result = "";
             for (int i = 0; i < simbolCount; i++)
             {
-                Console.WriteLine((char)rand.Next(0, 256));
+                simbol[i] += (char)rand.Next(0, 256);
+                result += simbol[i].ToString();
             }
+            return result;
         }
 
         //*************************КОД ЗАДАНИЯ 4*******************************************
